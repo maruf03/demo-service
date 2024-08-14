@@ -19,7 +19,7 @@ public class OpenApiConfig {
     private String serviceName;
 
     @Bean
-    private OpenAPI apiInfo() {
+    public OpenAPI apiInfo() {
         final String securitySchemeName = "Access Token for Order Management Service";
         return new OpenAPI().addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
                 .components(new Components().addSecuritySchemes(securitySchemeName, new SecurityScheme()
