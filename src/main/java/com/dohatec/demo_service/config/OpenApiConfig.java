@@ -20,7 +20,7 @@ public class OpenApiConfig {
 
     @Bean
     public OpenAPI apiInfo() {
-        final String securitySchemeName = "Access Token for Order Management Service";
+        final String securitySchemeName = "Access Token";
         return new OpenAPI().addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
                 .components(new Components().addSecuritySchemes(securitySchemeName, new SecurityScheme()
                         .name(securitySchemeName)
@@ -30,14 +30,14 @@ public class OpenApiConfig {
                 .info(new Info()
                         .title(serviceName)
                         .version("v1.0")
-                        .description("API Documentation for Order Management Service 1.0")
+                        .description("API Documentation for Demo Service 1.0")
                         .termsOfService(null)
                         .license(getLicense()));
     }
 
     private License getLicense() {
         License license = new License();
-        license.setName("Doha Securities");
+        license.setName("Maruf Al Alif Khan");
         license.setUrl("#");
         return license;
     }
